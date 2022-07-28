@@ -6,21 +6,17 @@
 # Nota: no entendí muy bien la diferencia entre este ejercicio y el calculo_nota. Simplemente hice que en este código
 # aparecieran la nota más alta de todos los alumnos y en el anterior uno escogía que alumno quería que apareciera.
 
-data= File.open("notas.data").readlines
-print data.class 
-puts ""
-print data
-puts""
+notas= File.open("notas.data").readlines
 
-data.map! { |line| line.split(",")}
-print data
-puts""
 
-def nota_mas_alta(data)
-    [data[0], data.map { |x| x.to_i}.max]
+notas.map! { |n| n.split(",")}
+
+def nota_mas_alta(notas)
+    [notas[0], notas.map { |m| m.to_i}.max]
 end
 
-print nota_mas_alta(data[0])
-print nota_mas_alta(data[1])
-print nota_mas_alta(data[2])
-print nota_mas_alta(data[3])
+print nota_mas_alta(notas[0]),"\n"
+print nota_mas_alta(notas[1]),"\n"
+print nota_mas_alta(notas[2]),"\n"
+print nota_mas_alta(notas[3]),"\n"
+
